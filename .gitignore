@@ -3,6 +3,10 @@
 db.sqlite3
 
 # Ignore other sensitive or local files
+# Specific files if they are in your root
+Scripts/
+Lib/
+pyvenv.cfg
 .env
 __pycache__/
 *.pyc
