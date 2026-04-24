@@ -26,9 +26,12 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = [
-    'marketplace-b7a5hnbuhpfvb9an.southindia-01.azurewebsites.net',
-]
+# This reads the comma-separated string from Azure and turns it into a list
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='', cast=lambda v: [s.strip() for s in v.split(',') if s.strip()])
+
+# Optional: Add the common Azure internal IP range automatically
+ALLOWED_HOSTS.append('127.0.0.1')
+ALLOWED_HOSTS.append('localhost')
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
