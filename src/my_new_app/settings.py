@@ -64,6 +64,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# This reads a comma-separated list of URLs from your environment variables
+CSRF_TRUSTED_ORIGINS = config(
+    'CSRF_TRUSTED_ORIGINS', 
+    default='', 
+    cast=lambda v: [s.strip() for s in v.split(',') if s.strip()]
+)
+
 ROOT_URLCONF = 'my_new_app.urls'
 
 TEMPLATES = [
