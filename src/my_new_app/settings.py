@@ -26,7 +26,9 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'marketplace-b7a5hnbuhpfvb9an.southindia-01.azurewebsites.net',
+]
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
