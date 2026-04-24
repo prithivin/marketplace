@@ -1,0 +1,8 @@
+# created by virtualenv automatically
+# Ignore SQLite database
+db.sqlite3
+
+# Ignore other sensitive or local files
+.env
+__pycache__/
+*.pyc
